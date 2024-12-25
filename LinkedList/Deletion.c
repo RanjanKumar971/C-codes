@@ -79,10 +79,10 @@ struct Node *deleteEnd(struct Node *head)
 // print
 void print_List(struct Node *ptr)
 {
-    if (ptr = NULL)
+    if (ptr == NULL)
     {
         printf("List is empty\n");
-        return NULL;
+        return;
     }
     while (ptr != NULL)
     {
@@ -122,7 +122,13 @@ int main()
     head = deleteIndex(head, 3);
     print_List(head);
 
-    deleteEnd(head);
+    head=deleteEnd(head);
+    print_List(head);
+
+    head=deleteEnd(head);
+    print_List(head);
+
+    head=deleteEnd(head);
     print_List(head);
 
     return 0;
