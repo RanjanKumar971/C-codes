@@ -7,6 +7,11 @@ struct Node
 };
 void printlist(struct Node *head)
 {
+    if (head == NULL)
+    {
+        printf("List is empty");
+        return;
+    }
     while (head != NULL)
     {
         printf("%d -> ", head->data);
@@ -49,6 +54,11 @@ void insertEnd(struct Node *head, int data)
 {
     struct Node *n = (struct Node *)malloc(sizeof(struct Node));
     n->data = data;
+    if (head == NULL)
+    {
+        head = n;
+        return;
+    }
     struct Node *p = head;
     while (p->next != NULL)
         p = p->next;
